@@ -6,6 +6,8 @@ const prefix ='!';
 
 const fs = require('fs');
 
+const welcome = require("./welcome");
+
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
@@ -17,6 +19,8 @@ client.commands.set(command.name, command);
 
 client.once('ready',()=>{
     console.log('Hood is online!');
+
+    welcome(client);
 });
 
 client.on('message',message=>{
