@@ -1,5 +1,5 @@
 module.exports = client =>{
-    client.on("guildMemberAdd, (member) =>{
+    client.on("guildMemberAdd", (member) =>{
         const channelId="488293697935376406"
         console.log(member);
 
