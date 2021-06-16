@@ -4,6 +4,6 @@ module.exports = client =>{
         console.log(member);
 
         const message = `Welcome to the crib <@${member.id}>`
-        channel.send(message);
+        message.channel.send(message);
     });
 };
