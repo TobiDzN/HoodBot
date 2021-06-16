@@ -5,7 +5,7 @@ module.exports = (client) => {
         
         const message = `Welcome to the crib <@${member.id}>`;
 
-        cont channel = member.guild.channels.cache.get(channelId);
+        const channel = member.guild.channels.cache.get(channelId);
         message.channel.send(message);
     });
 };
