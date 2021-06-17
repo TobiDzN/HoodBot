@@ -21,7 +21,7 @@ const command = require(`./commands/${file}`);
 
 const cmds = (flawlessvictory,ping,timer);
 
-var helps;
+var helps=" ";
 
 for(var i=0;i<cmds.length;i++)
     {
