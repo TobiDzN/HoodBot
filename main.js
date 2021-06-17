@@ -25,7 +25,7 @@ var helps=" ";
 
 for(var i=0;i<cmds.length;i++)
     {
-      helps=helps.toString + '!'+ cmds[i].name +' - '+cmds[i].description +'\n'
+      helps=helps.toString + '!'+ cmds[i].getName +' - '+cmds[i].getDescription +'\n'
     };
 
 client.commands.set(command.name, command);
