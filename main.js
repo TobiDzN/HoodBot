@@ -23,17 +23,18 @@ const cmds = [client.commands.get('ping'), client.commands.get('timer'), client.
 
 client.commands.set(command.name, command);
 
-var helps=" ";
-
-for(var i=0;i<cmds.length;i++)
-    {
-      helps=helps.toString + '!'+ cmds[i].getName() +' - '+cmds[i].getDescription() +'\n'
-    };
-    
 }
 
 client.once('ready',()=>{
     console.log('Hood is online!');
+
+    var helps=" ";
+
+    for(var i=0;i<cmds.length;i++)
+    {
+      helps=helps.toString + '!'+ cmds[i].getName() +' - '+cmds[i].getDescription() +'\n'
+    };
+
 
     welcome(client);
 });
