@@ -23,7 +23,7 @@ const cmds = [client.commands.get('ping'), client.commands.get('timer'), client.
 
 var helps=" ";
 
-for(var i=0;i<cmds.length()-1;i++)
+for(var i=0;i<cmds.length;i++)
     {
       helps=helps.toString + '!'+ cmds[i].name.toString +' - '+cmds[i].description.toString +'\n'
     };
