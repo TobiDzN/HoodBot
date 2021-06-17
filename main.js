@@ -7,6 +7,9 @@ const client = new Discord.Client();
 const prefix ='!';
 
 const fs = require('fs');
+const flawlessvictory = require('./commands/flawlessvictory');
+const ping = require('./commands/ping');
+const timer = require('./commands/timer');
 
 const welcome = require("./welcome");
 
@@ -15,6 +18,13 @@ client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
 const command = require(`./commands/${file}`);
+
+const cmds = (flawlessvictory,ping,timer);
+
+const helps = cmds.forEach(element => 
+    {
+    '!'+ cmds[element].name +' - '+cmds[element].description+'\n'
+    });
 
 client.commands.set(command.name, command);
 }
@@ -46,8 +56,10 @@ client.on('message',message=>{
         const embed = new MessageEmbed()
         .setTitle('My Commands:')
         .setColor(0xff0000)
-        .setDescription('!'+client.commands.get('ping').name+'-'+client.commands.get('ping').description+'\n'+
-        '!'+client.commands.get('timer').name+'-'+client.commands.get('timer').description
+        .setDescription
+        (
+        '!'+client.commands.get('ping').name+' - '+client.commands.get('ping').description+'\n'+
+        '!'+client.commands.get('timer').name+' - '+client.commands.get('timer').description
         );
         message.channel.send(embed);
         message.react('👍');
