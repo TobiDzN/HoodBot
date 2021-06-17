@@ -19,14 +19,14 @@ const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith(
 for(const file of commandFiles){
 const command = require(`./commands/${file}`);
 
-const cmds = [client.commands.get('ping'), client.commands.get('timer'), client.commands.get('flawlessvictory')];
-
 client.commands.set(command.name, command);
 
 }
 
 client.once('ready',()=>{
     console.log('Hood is online!');
+
+    const cmds = [client.commands.get('ping'), client.commands.get('timer'), client.commands.get('flawlessvictory')];
 
     var helps=" ";
 
