@@ -5,5 +5,13 @@ module.exports={
     {
      
 
-    }
+    },
+    getName(message,args)
+    {
+        return this.name;
+    },
+   getDescription(message,args)
+   {
+       return this.description;
+   }
 }
