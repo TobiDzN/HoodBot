@@ -21,7 +21,7 @@ const command = require(`./commands/${file}`);
 
 const cmds = (flawlessvictory,ping,timer);
 
-const helps = cmds.forEach(element => 
+const helps = forEach(element => 
     {
     '!'+ cmds[element].name +' - '+cmds[element].description+'\n'
     });
