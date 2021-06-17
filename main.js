@@ -43,7 +43,14 @@ client.on('message',message=>{
     }
     else if(command === 'help')
     {
-        client.commands.get('help').execute(message,args);
+        const embed = new MessageEmbed()
+        .setTitle('My Commands:')
+        .setColor(0xff0000)
+        .setDescription('!'+client.commands.get('ping').name+'-'+client.commands.get('ping').description+'\n'+
+        '!'+client.commands.get('timer').name+'-'+client.commands.get('timer').description
+        );
+        message.channel.send(embed);
+        message.react('👍');
     }
     else if(command === 'yoshi')
     {
