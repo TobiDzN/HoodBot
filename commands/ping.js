@@ -2,7 +2,7 @@ const { Client } = require("discord.js");
 
 module.exports={
         name:'ping',
-        description:"this is a ping command!",
+        description:"pong!",
         execute(message,args){
             message.channel.send('pong!');
     }
