@@ -21,10 +21,12 @@ const command = require(`./commands/${file}`);
 
 const cmds = (flawlessvictory,ping,timer);
 
-const helps = forEach(element => 
+var helps;
+
+for(var i=0;i<cmds.length;i++)
     {
-    '!'+ cmds[element].name +' - '+cmds[element].description+'\n'
-    });
+      helps=helps + '!'+ cmds[i].name +' - '+cmds[i].description+'\n'
+    };
 
 client.commands.set(command.name, command);
 }
