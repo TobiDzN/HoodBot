@@ -33,15 +33,12 @@ client.on('message',message=>{
     client.commands.get('ping').execute(message,args);
     }
     else if(command==='timer'){
-    var sec=60;
-    message.channel.send(""+sec).then(msg=>msg.delete(1000));
-    for(var i=0;i<sec;i++)
+      
+    }
+    else if(command === 'flawlessvictory')
     {
-        message.delete({timeout:1000,reason:'.'});
-        sec--;
-        message.channel.send(""+sec);
-    }   
-}
+    client.commands.get('flawlessvictory').execute(message,args);
+    }
 
 });
 
