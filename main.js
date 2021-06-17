@@ -46,10 +46,9 @@ client.on('message',message=>{
         const embed = new MessageEmbed()
         .setTitle('My Commands:')
         .setColor(0xff0000)
-        .setDescription('/ping - pong! \n /timer - WIP \n /flawlessvictory - you never know until you try :)')
-        .setFooter("yo yo");
+        .setDescription('/ping - pong! \n /timer - WIP \n /flawlessvictory - you never know until you try :)');
         message.channel.send(embed);
-        message.react(':FlyingYoshi:');
+        message.react('👍');
     }
 
 });
