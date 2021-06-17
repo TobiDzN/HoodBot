@@ -21,14 +21,15 @@ const command = require(`./commands/${file}`);
 
 const cmds = [client.commands.get('ping'), client.commands.get('timer'), client.commands.get('flawlessvictory')];
 
+client.commands.set(command.name, command);
+
 var helps=" ";
 
 for(var i=0;i<cmds.length;i++)
     {
       helps=helps.toString + '!'+ cmds[i].getName() +' - '+cmds[i].getDescription() +'\n'
     };
-
-client.commands.set(command.name, command);
+    
 }
 
 client.once('ready',()=>{
