@@ -53,7 +53,7 @@ client.on('message',message=>{
 
         for(var i=0;i<cmds.length;i++)
         {
-            helps=helps.toString + '!'+ cmds[i].getName() +' - '+cmds[i].getDescription() +'\n'
+            helps=helps + '!'+ cmds[i].getName() +' - '+cmds[i].getDescription() +'\n'
         };
         const embed = new MessageEmbed()
         .setTitle('My Commands:')
