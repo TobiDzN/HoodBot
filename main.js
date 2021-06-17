@@ -50,6 +50,10 @@ client.on('message',message=>{
         message.channel.send(embed);
         message.react('👍');
     }
+    else if(command === 'yoshi')
+    {
+        message.channel.send('https://cdn.discordapp.com/emojis/611546554838417439.gif?v=1');
+    }
 
 });
 
