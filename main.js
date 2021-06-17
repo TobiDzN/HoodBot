@@ -58,11 +58,7 @@ client.on('message',message=>{
         const embed = new MessageEmbed()
         .setTitle('My Commands:')
         .setColor(0xff0000)
-        .setDescription
-        (
-        '!'+client.commands.get('ping').name+' - '+client.commands.get('ping').description+'\n'+
-        '!'+client.commands.get('timer').name+' - '+client.commands.get('timer').description
-        );
+        .setDescription(helps); 
         message.channel.send(embed);
         message.react('👍');
     }
