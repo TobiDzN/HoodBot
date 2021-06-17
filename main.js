@@ -26,16 +26,6 @@ client.commands.set(command.name, command);
 client.once('ready',()=>{
     console.log('Hood is online!');
 
-    const cmds = [client.commands.get('ping'), client.commands.get('timer'), client.commands.get('flawlessvictory')];
-
-    var helps=" ";
-
-    for(var i=0;i<cmds.length;i++)
-    {
-      helps=helps.toString + '!'+ cmds[i].getName() +' - '+cmds[i].getDescription() +'\n'
-    };
-
-
     welcome(client);
 });
 
@@ -57,6 +47,14 @@ client.on('message',message=>{
     }
     else if(command === 'help')
     {
+        const cmds = [client.commands.get('ping'), client.commands.get('timer'), client.commands.get('flawlessvictory')];
+
+        var helps=" ";
+
+        for(var i=0;i<cmds.length;i++)
+        {
+            helps=helps.toString + '!'+ cmds[i].getName() +' - '+cmds[i].getDescription() +'\n'
+        };
         const embed = new MessageEmbed()
         .setTitle('My Commands:')
         .setColor(0xff0000)
