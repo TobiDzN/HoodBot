@@ -39,7 +39,7 @@ client.on('message',message=>{
     client.commands.get('ping').execute(message,args);
     }
     else if(command==='timer'){
-      
+      client.commands.get('timer').execute(message,args);
     }
     else if(command === 'flawlessvictory')
     {
