@@ -25,7 +25,7 @@ client.commands.set(command.name, command);
 
 client.once('ready',()=>{
     console.log('Hood is online!');
-
+    client.user.setActivity("You Got That Gas Money?");
     welcome(client);
 });
 
