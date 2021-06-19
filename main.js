@@ -76,6 +76,10 @@ client.on('message',message=>{
     {
         message.channel.send('https://cdn.discordapp.com/emojis/611546554838417439.gif?v=1');
     }
+    else if(command === 'burn')
+    {
+        message.channel.send('https://tenor.com/view/ohh-burn-roast-meme-shock-gif-17394160');
+    }
 
 });
 
