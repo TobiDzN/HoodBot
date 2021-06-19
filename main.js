@@ -78,7 +78,7 @@ client.on('message',message=>{
     }
     else if(command === 'burn')
     {
-        message.channel.send('https://tenor.com/view/ohh-burn-roast-meme-shock-gif-17394160');
+        message.channel.send('https://tenor.com/view/end-this-mans-career-gif-15373383');
     }
 
 });
