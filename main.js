@@ -4,6 +4,8 @@ const { Client, MessageEmbed } = require('discord.js');
 
 const client = new Discord.Client();
 
+const ytdl = require("ytdl-core");
+
 const prefix ='!';
 
 const fs = require('fs');
@@ -23,6 +25,8 @@ client.commands.set(command.name, command);
 
 }
 
+var servers = [];
+
 client.once('ready',()=>{
     console.log('Hood is online!');
     client.user.setActivity("You Got That Gas Money?");
@@ -34,10 +38,8 @@ client.on("message", message => {
 
     if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
 
-    if(message.mentions.has(356058278918356993)) message.channel.send('https://cdn.discordapp.com/emojis/611546554838417439.gif?v=1');
-
     if (message.mentions.has(client.user.id)) {
-        message.channel.send("Hello there!");
+        message.channel.send("Yo!");
     };
 });
 
@@ -81,6 +83,51 @@ client.on('message',message=>{
     else if(command === 'burn')
     {
         message.channel.send('https://tenor.com/view/end-this-mans-career-gif-15373383');
+    }
+    else if(commands === 'play')
+    {
+        function play(connection, message)
+        {
+            var server = servers[message.guild.id]
+            server.dispachter = connection.playStream(ytdl(server.queue[0], {filter:"audioonly"}));
+
+            server.queue.shift();
+
+            server.dispachter.on("end", function(){
+                if(server.queue[0])
+                {
+                    play(connection, message);
+
+                }
+                else {
+                    connection.disconnect();
+                }
+            })
+        }
+
+        if(!args[1])
+        {
+            message.channel.send("Gimme a link brotha!")
+        }
+
+        if(!message.member.voice)
+        {
+            message.channel.send("Join a Voice Channel")
+        }
+
+        if(!servers[message.guild.id]) servers[message.guild.id] = {
+            queue: []
+        }
+
+        var server = servers[message.guild.id];
+
+        server.queue.push(args[1]);
+
+        if(!message.guild.voice) message.member.voice.join().then(function(connection){
+            play(connection, message)
+        })
+        
+
     }
 
 });
