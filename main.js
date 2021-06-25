@@ -84,7 +84,7 @@ client.on('message',message=>{
     {
         message.channel.send('https://tenor.com/view/end-this-mans-career-gif-15373383');
     }
-    else if(commands === 'play')
+    else if(command === 'play')
     {
         function play(connection, message)
         {
