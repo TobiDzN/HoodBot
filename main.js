@@ -105,12 +105,12 @@ client.on('message',message=>{
             })
         }
 
-        if(!command[1])
+        if(!args[1])
         {
             message.channel.send("Gimme a link brotha!")
         }
 
-        if(!message.member.voice)
+        if(!message.member.voiceChannel)
         {
             message.channel.send("Join a Voice Channel")
         }
@@ -123,7 +123,7 @@ client.on('message',message=>{
 
         server.queue.push(args[1]);
 
-        if(!message.guild.voice) message.member.voice.join().then(function(connection){
+        if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
             play(connection, message)
         })
         
