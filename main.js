@@ -111,6 +111,10 @@ client.on('message',message=>{
         {
             message.channel.send("Gimme a link brotha!")
         }
+        else
+        {
+            message.react('👍');
+        }
 
         if(!message.member.voice.channel)
         {
