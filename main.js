@@ -6,6 +6,8 @@ const client = new Discord.Client();
 
 const ytdl = require("ytdl-core");
 
+const idk = require ("ffmpeg-static");
+
 const prefix ='!';
 
 const fs = require('fs');
