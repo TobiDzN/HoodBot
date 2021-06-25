@@ -39,7 +39,7 @@ client.on("message", message => {
     if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
 
     if (message.mentions.has(client.user.id)) {
-        message.channel.send("Yo Wassup!");
+        message.channel.send("Yo Wassupp!");
     };
 });
 
