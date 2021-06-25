@@ -34,7 +34,7 @@ client.on("message", message => {
 
     if (message.content.includes("@here") || message.content.includes("@everyone")) return false;
 
-    if(message.content.includes("@Yoshi")) message.channel.send('https://cdn.discordapp.com/emojis/611546554838417439.gif?v=1');
+    if(message.mentions.has(356058278918356993)) message.channel.send('https://cdn.discordapp.com/emojis/611546554838417439.gif?v=1');
 
     if (message.mentions.has(client.user.id)) {
         message.channel.send("Hello there!");
