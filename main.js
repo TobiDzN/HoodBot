@@ -105,7 +105,7 @@ client.on('message',message=>{
             })
         }
 
-        if(!args[1])
+        if(!command[1])
         {
             message.channel.send("Gimme a link brotha!")
         }
