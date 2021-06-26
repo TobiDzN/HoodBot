@@ -90,7 +90,7 @@ client.on('message',message=>{
     {
         function play(connection, message)
         {
-            var server = message.guild.id;
+            var server = servers[message.guild.id];
             server.dispachter = connection.play(ytdl(server.queue[0], {filter:"audioonly"}));
             
             server.queue.shift();
@@ -130,7 +130,7 @@ client.on('message',message=>{
         server.queue.push(args[1]);
 
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
-            play(connection, message)
+            play(connection, message);
         })
         
 
