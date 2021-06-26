@@ -107,7 +107,7 @@ client.on('message',message=>{
             })
         }
 
-        if(!command[1])
+        if(!args[1])
         {
             message.channel.send("Gimme a link brotha!");
             return;
@@ -129,7 +129,7 @@ client.on('message',message=>{
 
         var server = servers[message.guild.id];
 
-        server.queue.push(command[1]);
+        server.queue.push(args[1]);
 
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
             play(connection, message);
