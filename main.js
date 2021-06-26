@@ -90,7 +90,7 @@ client.on('message',message=>{
     {
         function play(connection, message)
         {
-            var server = client.guilds.get(message.guild.id).id;
+            var server = message.guild.id;
             server.dispachter = connection.play(ytdl(server.queue[0], {filter:"audioonly"}));
             
             server.queue.shift();
