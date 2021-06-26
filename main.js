@@ -109,7 +109,8 @@ client.on('message',message=>{
 
         if(!command[1])
         {
-            message.channel.send("Gimme a link brotha!")
+            message.channel.send("Gimme a link brotha!");
+            return;
         }
         else
         {
@@ -118,7 +119,8 @@ client.on('message',message=>{
 
         if(!message.member.voice.channel)
         {
-            message.channel.send("Join a Voice Channel")
+            message.channel.send("Join a Voice Channel");
+            return;
         }
 
         if(!servers[message.guild.id]) servers[message.guild.id] = {
