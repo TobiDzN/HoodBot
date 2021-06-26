@@ -47,8 +47,8 @@ client.on("message", message => {
 
 client.on('message',message=>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
-    
-    let args = message.content.slice(prefix.length).split(/ +/);
+
+    let args = message.content.substring(prefix.length).split(" ");
     const command = args.shift().toLowerCase();
     
     if(command === 'ping'){
