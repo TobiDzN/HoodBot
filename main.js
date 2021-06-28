@@ -115,7 +115,7 @@ client.on('message',message=>{
             })
         }
 
-        if(!args[0])
+        if(!args[0]&&args[0].startsWith("https://youtube"))
         {
             message.channel.send("Gimme a link brotha!");
             return;
@@ -144,6 +144,12 @@ client.on('message',message=>{
         })
         
 
+    }
+    else if(command===dc)
+    {
+        message.channel.disconnect();
+        message.channel.send("Cya dog!");
+        message.channel.react('\:wave:');
     }
 
 
