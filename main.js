@@ -147,7 +147,7 @@ client.on('message',message=>{
     }
     else if(command==='dc')
     {
-        message.channel.disconnect();
+        message.member.voice.disconnect();
         message.channel.send("Cya dog!");
         message.channel.react('\:wave:');
     }
