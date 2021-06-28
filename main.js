@@ -145,7 +145,7 @@ client.on('message',message=>{
         
 
     }
-    else if(command===dc)
+    else if(command==='dc')
     {
         message.channel.disconnect();
         message.channel.send("Cya dog!");
