@@ -138,6 +138,14 @@ client.on('message',message=>{
 
     }
 
+    switch(args[0])
+        {
+            case 'play':
+            message.channel.send("yes yes");
+
+            break;
+        }
+
 });
 
 
