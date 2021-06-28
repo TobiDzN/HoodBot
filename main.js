@@ -94,6 +94,10 @@ client.on('message',message=>{
     {
         message.channel.send('https://tenor.com/view/end-this-mans-career-gif-15373383');
     }
+    else if(command==='KEKW')
+    {
+        messsage.channel.send('https://cdn.discordapp.com/emojis/709292051895681096.png?v=1');
+    }
     else if(command === 'play')
     {
         function play(connection, message)
