@@ -149,7 +149,7 @@ client.on('message',message=>{
     {
         message.member.voice.channel.leave();
         message.channel.send("Cya dog!");
-        message.react('\:wave:');
+        message.react('👋');
     }
 
 
