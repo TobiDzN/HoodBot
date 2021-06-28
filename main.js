@@ -50,6 +50,14 @@ client.on('message',message=>{
 
     let args = message.content.substring(prefix.length).split(" ");
     const command = args.shift().toLowerCase();
+
+    switch(args[0])
+        {
+            case 'play':
+            message.channel.send("yes yes");
+
+            break;
+        }
     
     if(command === 'ping'){
     client.commands.get('ping').execute(message,args);
@@ -138,13 +146,7 @@ client.on('message',message=>{
 
     }
 
-    switch(args[0])
-        {
-            case 'play':
-            message.channel.send("yes yes");
 
-            break;
-        }
 
 });
 
