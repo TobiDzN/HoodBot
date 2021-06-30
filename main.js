@@ -119,7 +119,7 @@ client.on('message',message=>{
             })
         }
 
-        if(!args[0]||!args[0].startsWith("https://youtube"))
+        if(!args[0]||!args[0].startsWith("https"))
         {
             message.channel.send("Gimme a link brotha!");
             return;
