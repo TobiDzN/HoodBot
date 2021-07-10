@@ -127,7 +127,7 @@ client.on('message',message=>{
 
             var server = servers[message.guild.id];
 
-            server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
+            server.queue.push(args[0]);
 
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
             play(connection, message);
