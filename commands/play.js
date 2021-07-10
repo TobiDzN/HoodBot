@@ -8,6 +8,7 @@ module.exports={
         name:'play',
         description:"Plays a song with provided link!",
         execute(message,args){
+            var servers = [];
             function play(connection, message)
         {
             var server = servers[message.guild.id];
