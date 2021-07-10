@@ -98,7 +98,7 @@ client.on('message',message=>{
     {
         messsage.channel.send('https://cdn.discordapp.com/emojis/709292051895681096.png?v=1');
     }
-    else if(command === 'play')
+    else if(command === 'play'||command === 'p')
     {
         function play(connection, message)
         {
@@ -151,16 +151,23 @@ client.on('message',message=>{
     }
     else if(command==='dc')
     {
-       // server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
+        // if(message.member.voice.connection)
+        // {
+            
+        // }
+
+
         setTimeout(() => { 
         message.member.voice.channel.leave();
         message.channel.send("Cya dog!");
         message.react('👋');
         }, 2000);
         
-        //message.member.voice.channel.leave();
-        //message.channel.send("Cya dog!");
-        //message.react('👋');
+       
+    }
+    else if(command === 't')
+    {
+        client.commands.get('play').execute(message,args);
     }
 
 
