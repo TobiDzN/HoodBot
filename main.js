@@ -152,13 +152,15 @@ client.on('message',message=>{
     else if(command==='dc')
     {
        // server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
-        setTimeout(() => {
-            
-        }, 2000);
-        
+        setTimeout(() => { 
         message.member.voice.channel.leave();
         message.channel.send("Cya dog!");
         message.react('👋');
+        }, 2000);
+        
+        //message.member.voice.channel.leave();
+        //message.channel.send("Cya dog!");
+        //message.react('👋');
     }
 
 
