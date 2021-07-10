@@ -104,10 +104,10 @@ client.on('message',message=>{
     }
     else if(command==='dc')
     {
-        // if(message.member.voice.connection)
-        // {
-            
-        // }
+         if(message.member.voice.connection)
+         {
+            message.channel.send("i can say stuff");
+         }
 
 
         setTimeout(() => { 
