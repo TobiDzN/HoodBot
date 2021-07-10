@@ -137,9 +137,8 @@ client.on('message',message=>{
 
 
         setTimeout(() => { 
-        if(message.member.voice.connection){
-            message.member.voice.channel.leave();
-        }
+        message.member.voice.channel.leave();
+
         message.channel.send("Cya dog!");
         message.react('👋');
         }, 2000);
