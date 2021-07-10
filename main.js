@@ -119,11 +119,11 @@ client.on('message',message=>{
                     play(connection, message);
 
                 }
-                else {
+                else{
                     connection.disconnect();
-                    }
-             })
-            }
+              }
+         })
+       }
 
             var server = servers[message.guild.id];
 
@@ -134,7 +134,9 @@ client.on('message',message=>{
         })
 
          }
-
+         else{
+             message.react('<:weed:568497400126111751>');
+         }
 
         setTimeout(() => { 
         message.member.voice.channel.leave();
