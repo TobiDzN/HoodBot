@@ -104,14 +104,42 @@ client.on('message',message=>{
     }
     else if(command==='dc')
     {
-         if(!message.member.voice.connection)
+         if(message.member.voice.connection)
          {
-            message.channel.send("i can say stuff");
+            function play(connection, message)
+            {
+            var server = servers[message.guild.id];
+            server.dispachter = connection.play(ytdl(server.queue[0], {filter:"audioonly"}));
+            
+            server.queue.shift();
+
+            server.dispachter.on("end", function(){
+                if(server.queue[0])
+                {
+                    play(connection, message);
+
+                }
+                else {
+                    connection.disconnect();
+                    }
+             })
+            }
+
+            var server = servers[message.guild.id];
+
+            server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
+
+        if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
+            play(connection, message);
+        })
+
          }
 
 
         setTimeout(() => { 
-        message.member.voice.channel.leave();
+        if(message.member.voice.connection){
+            message.member.voice.channel.leave();
+        }
         message.channel.send("Cya dog!");
         message.react('👋');
         }, 2000);
