@@ -28,7 +28,7 @@ module.exports={
             })
         }
 
-        if(!args[0]||!args[0].startsWith("https")&&!mode==2)
+        if(!mode==2&&!args[0]||!args[0].startsWith("https"))
         {
             message.channel.send("Gimme a link brotha!");
             return;
