@@ -27,17 +27,15 @@ module.exports={
                 }
             })
         }
-
-        if(!mode==2&&!args[0]||!args[0].startsWith("https"))
-        {
+        if(mode==1){
+          if(args[0]||!args[0].startsWith("https")){
             message.channel.send("Gimme a link brotha!");
             return;
-        }
-        else
-        {
+            }
+            else{ 
             message.react('👍');
-        }
-
+         }
+    }
         if(!message.member.voice.channel)
         {
             message.channel.send("Join a Voice Channel");
