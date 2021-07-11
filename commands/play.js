@@ -50,9 +50,11 @@ module.exports={
 
         if(mode == 1){
         server.queue.push(args[0]);
+        console.log("bot played:"+args[0]);
         }
         else if(mode == 2)
         {
+        console.log("bot disconnected");
         server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
         }
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
