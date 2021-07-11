@@ -50,13 +50,10 @@ module.exports={
 
         if(mode == 1){
         server.queue.push(args[0]);
-        message.channel.send("mode 1");
         }
         else if(mode == 2)
         {
-        //server.queue.length(0);
         server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
-        message.channel.send("mode 2");
         }
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
             play(connection, message);
