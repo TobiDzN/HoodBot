@@ -55,7 +55,7 @@ module.exports={
         }
         else if(mode == 0)
         {
-        server.queue.length = 0;
+        server.queue.length(0);
         server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
         }
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
