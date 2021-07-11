@@ -54,7 +54,7 @@ module.exports={
         }
         else if(mode == 2)
         {
-        server.queue.length(0);
+        //server.queue.length(0);
         server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
         message.channel.send("mode 2");
         }
