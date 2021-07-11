@@ -7,7 +7,7 @@ const idk = require ("ffmpeg-static");
 module.exports={
         name:'play',
         description:"Plays a song with provided link!",
-        execute(message,args){
+        execute(message,args,mode){
             var servers = [];
             function play(connection, message)
             {
@@ -50,8 +50,13 @@ module.exports={
 
         var server = servers[message.guild.id];
 
+        if(mode == 1){
         server.queue.push(args[0]);
-
+        }
+        else if(mode == 0)
+        {
+        server.queue.push('https://www.youtube.com/watch?v=k6Ly96hHt1A');
+        }
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
             play(connection, message);
         })

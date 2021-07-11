@@ -100,39 +100,13 @@ client.on('message',message=>{
     }
     else if(command === 'play'||command === 'p')
     {
-        client.commands.get('play').execute(message,args);
+        client.commands.get('play').execute(message,args,1);
     }
     else if(command==='dc')
     {
          if(message.member.voice.connection)
          {
-            function play(connection, message)
-            {
-            var server = servers[message.guild.id];
-            server.dispachter = connection.play(ytdl(server.queue[0], {filter:"audioonly"}));
-            
-            server.queue.shift();
-
-            server.dispachter.on("end", function(){
-                if(server.queue[0])
-                {
-                    play(connection, message);
-
-                }
-                else{
-                    connection.disconnect();
-              }
-         })
-       }
-
-            var server = servers[message.guild.id];
-
-            server.queue.push(args[0]);
-
-        if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
-            play(connection, message);
-        })
-
+            client.commands.get('play').execute(message,args,0);
          }
          else{
              message.react('<:weed:568497400126111751>');
