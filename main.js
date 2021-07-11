@@ -106,7 +106,7 @@ client.on('message',message=>{
     {
          if(message.member.voice.connection)
          {
-            client.commands.get('play').execute(message,args,0);
+            client.commands.get('play').execute(message,args,2);
          }
          else{
              message.react('<:weed:568497400126111751>');
