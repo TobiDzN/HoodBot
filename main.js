@@ -102,14 +102,14 @@ client.on('message',message=>{
     {
         client.commands.get('play').execute(message,args,1);
     }
-    else if(command==='dc')
+    else if(command === 'dc')
     {
-         if(message.member.voice.connection)
+         if(!message.member.voice.connection)
          {
-            client.commands.get('play').execute(message,args,2);
+            message.react('<:weed:568497400126111751>');
          }
          else{
-             message.react('<:weed:568497400126111751>');
+             client.commands.get('play').execute(message,args,2);
          }
 
         setTimeout(() => { 
