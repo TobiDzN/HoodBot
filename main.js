@@ -104,14 +104,8 @@ client.on('message',message=>{
     }
     else if(command === 'dc')
     {
-         if(!message.member.voice.connection)
-         {
-            message.react('<:weed:568497400126111751>');
-         }
-         else{
-             client.commands.get('play').execute(message,args,2);
-         }
-
+        client.commands.get('play').execute(message,args,2);
+         
         setTimeout(() => { 
         message.member.voice.channel.leave();
 
