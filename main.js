@@ -95,7 +95,7 @@ client.on('message',message=>{
     else if(command === 'play'||command === 'p')
     {
         client.commands.get('play').execute(message,args,1);
-        console.log("bot played:"+args[0]+" @"+d.toLocaleTimeString());
+        console.log("bot played:"+args[0]+" @"+d.getHours()+3)+":"+(d.getMinutes())+":"+(d.getSeconds()));
     }
     else if(command === 'dc')
     {
