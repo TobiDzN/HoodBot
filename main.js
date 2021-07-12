@@ -52,6 +52,19 @@ client.on('message',message=>{
     const command = args.shift().toLowerCase();
 
     var d = new Date();
+    var locald = (d.getHours()+3)+":"+(d.getMinutes())+":"+(d.getSeconds());
+    if(d.getHours()<10)
+    {
+        locald = ("0"+d.getHours()+3)+":"+(d.getMinutes())+":"+(d.getSeconds());
+    }
+    else if(d.getMinutes()<10)
+    {
+        locald = (d.getHours()+3)+":0"+(d.getMinutes())+":"+(d.getSeconds());
+    }
+    else if(d.getSeconds()<10)
+    {
+        locald = (d.getHours()+3)+":"+(d.getMinutes())+":0"+(d.getSeconds());
+    }
     
     if(command === 'ping'){
     client.commands.get('ping').execute(message,args);
@@ -95,12 +108,12 @@ client.on('message',message=>{
     else if(command === 'play'||command === 'p')
     {
         client.commands.get('play').execute(message,args,1);
-        console.log("bot played:"+args[0]+" @"+(d.getHours()+3)+":"+(d.getMinutes())+":"+(d.getSeconds()));
+        console.log("bot played:"+args[0]+" @"+locald);
     }
     else if(command === 'dc')
     {
         client.commands.get('play').execute(message,args,2);
-        console.log("bot disconnected @"+(d.getHours()+3)+":"+(d.getMinutes())+":"+(d.getSeconds()));
+        console.log("bot disconnected @"+locald);
         setTimeout(() => { 
         message.member.voice.channel.leave();
         message.channel.send("Cya dog!");
