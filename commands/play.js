@@ -55,8 +55,8 @@ module.exports={
         }
         else if(mode == 2)
         {
-        console.log("bot disconnected@"+d.toLocaleTimeString());
         server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
+        console.log("bot disconnected@"+d.toLocaleTimeString());
         }
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
             play(connection, message);
