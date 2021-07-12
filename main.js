@@ -106,7 +106,7 @@ client.on('message',message=>{
     }
     else if(command==='KEKW')
     {
-        messsage.channel.send('https://cdn.discordapp.com/emojis/709292051895681096.png?v=1');
+        messsage.channel.send('<:kekw:859119387255373845>');
     }
     else if(command === 'play'||command === 'p')
     {
