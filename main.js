@@ -125,6 +125,10 @@ client.on('message',message=>{
         
        
     }
+    else if(command === "time")
+    {
+        message.channel.send(locald);
+    }
     
 
 
