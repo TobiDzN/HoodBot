@@ -52,18 +52,21 @@ client.on('message',message=>{
     const command = args.shift().toLowerCase();
 
     var d = new Date();
-    var locald = ""+(d.getHours()+3)+":"+(d.getMinutes())+":"+(d.getSeconds());
+    var hours = (d.getHours()+3);
+    var minuets = (d.getMinutes());
+    var seconds = (d.getSeconds());
+    var locald = ""+(hours+":"+minuets+":"+seconds);
     if(d.getHours()<10)
     {
-        locald = ""+("0"+d.getHours()+3)+":"+(d.getMinutes())+":"+(d.getSeconds());
+        locald = ""+("0"+hours)+":"+(minuets)+":"+(seconds);
     }
     else if(d.getMinutes()<10)
     {
-        locald = ""+(d.getHours()+3)+":0"+(d.getMinutes())+":"+(d.getSeconds());
+        locald = ""+(hours)+":0"+(minuets)+":"+(seconds);
     }
     else if(d.getSeconds()<10)
     {
-        locald = ""+(d.getHours()+3)+":"+(d.getMinutes())+":0"+(d.getSeconds());
+        locald = ""+(hours)+":"+(minuets)+":0"+(seconds);
     }
     
     if(command === 'ping'){
