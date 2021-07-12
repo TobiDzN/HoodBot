@@ -104,7 +104,7 @@ client.on('message',message=>{
     {
         message.channel.send('https://tenor.com/view/end-this-mans-career-gif-15373383');
     }
-    else if(command==='KEKW')
+    else if(command==='kekw')
     {
         messsage.channel.send('<:kekw:859119387255373845>');
     }
