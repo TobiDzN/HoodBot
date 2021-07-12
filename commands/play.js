@@ -6,7 +6,7 @@ const idk = require ("ffmpeg-static");
 
 module.exports={
         name:'play',
-        description:"Plays a song with provided link!",
+        description:"Plays a song with provided link! - !p <url>",
         execute(message,args,mode){
             var servers = [];
             

@@ -81,7 +81,7 @@ client.on('message',message=>{
     }
     else if(command === 'help')
     {
-        const cmds = [client.commands.get('ping'), client.commands.get('timer'), client.commands.get('flawlessvictory')];
+        const cmds = [client.commands.get('ping'), client.commands.get('timer'), client.commands.get('flawlessvictory'), client.commands.get('play')];
 
         var helps=" ";
 
