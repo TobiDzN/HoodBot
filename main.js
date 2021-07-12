@@ -106,7 +106,7 @@ client.on('message',message=>{
     }
     else if(command==='kekw')
     {
-        messsage.channel.send('<:kekw:859119387255373845>');
+        message.channel.send('<:kekw:859119387255373845>');
     }
     else if(command === 'play'||command === 'p')
     {
