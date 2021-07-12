@@ -100,7 +100,7 @@ client.on('message',message=>{
     else if(command === 'dc')
     {
         client.commands.get('play').execute(message,args,2);
-        console.log("bot disconnected @"+d.toLocaleTimeString());
+        console.log("bot disconnected @"+(d.getHours()+3)+":"+(d.getMinutes())+":"+(d.getSeconds()));
         setTimeout(() => { 
         message.member.voice.channel.leave();
         message.channel.send("Cya dog!");
