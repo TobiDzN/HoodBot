@@ -9,6 +9,7 @@ module.exports={
         description:"Plays a song with provided link!",
         execute(message,args,mode){
             var servers = [];
+            var d = new Date();
             function play(connection, message)
             {
             var server = servers[message.guild.id];
@@ -50,11 +51,11 @@ module.exports={
 
         if(mode == 1){
         server.queue.push(args[0]);
-        console.log("bot played:"+args[0]);
+        console.log("bot played:"+args[0]+"@"+d.toLocaleTimeString());
         }
         else if(mode == 2)
         {
-        console.log("bot disconnected");
+        console.log("bot disconnected@"+d.toLocaleTimeString());
         server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
         }
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
