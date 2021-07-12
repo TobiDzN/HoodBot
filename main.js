@@ -51,13 +51,7 @@ client.on('message',message=>{
     let args = message.content.slice(prefix.length).split(" ");
     const command = args.shift().toLowerCase();
 
-    // switch(args[0]){
-       
-    //         case 'play':
-    //         message.channel.send("yes yes");
-
-    //         break;
-    //     }
+    var d = new Date();
     
     if(command === 'ping'){
     client.commands.get('ping').execute(message,args);
@@ -101,14 +95,14 @@ client.on('message',message=>{
     else if(command === 'play'||command === 'p')
     {
         client.commands.get('play').execute(message,args,1);
+        console.log("bot played:"+args[0]+" @"+d.toLocaleTimeString());
     }
     else if(command === 'dc')
     {
         client.commands.get('play').execute(message,args,2);
-         
+        console.log("bot disconnected @"+d.toLocaleTimeString());
         setTimeout(() => { 
         message.member.voice.channel.leave();
-
         message.channel.send("Cya dog!");
         message.react('👋');
         }, 2000);

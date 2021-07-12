@@ -9,7 +9,7 @@ module.exports={
         description:"Plays a song with provided link!",
         execute(message,args,mode){
             var servers = [];
-            var d = new Date();
+            
             function play(connection, message)
             {
             var server = servers[message.guild.id];
