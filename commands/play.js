@@ -51,12 +51,12 @@ module.exports={
 
         if(mode == 1){
         server.queue.push(args[0]);
-        console.log("bot played:"+args[0]+"@"+d.toLocaleTimeString());
+        console.log("bot played:"+args[0]);
         }
         else if(mode == 2)
         {
         server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
-        console.log("bot disconnected@"+d.toLocaleTimeString());
+        console.log("bot disconnected");
         }
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
             play(connection, message);
