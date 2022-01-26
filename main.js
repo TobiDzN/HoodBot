@@ -1,3 +1,4 @@
+const mySecret = process.env['TOKEN']
 const Discord = require('discord.js');
 
 const { Client, MessageEmbed } = require('discord.js');
@@ -166,4 +167,4 @@ client.on('message',message=>{
 
 
 keepAlive();
-client.login("ODU0NzY3MjQ1ODYyMjQwMjU2.YMouCA.8Rt4PFoFQr9zU73yvXcDqcqcevg");
+client.login(mySecret);
