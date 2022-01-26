@@ -6,7 +6,7 @@ const idk = require ("ffmpeg-static");
 
 module.exports={
         name:'play',
-        description:"Plays a song with provided link! - !p <url>",
+        description:"Plays a song with provided link! - !play/!p <url>",
         execute(message,args,mode){
             var servers = [];
             
@@ -58,6 +58,24 @@ module.exports={
         server.queue.push("https://www.youtube.com/watch?v=k6Ly96hHt1A");
         //console.log("bot disconnected");
         }
+        else if(mode == 3)
+        {
+          server.queue.push("https://www.youtube.com/watch?v=GPXkjtpGCFI");
+        }
+        else if(mode == 4)
+        {
+          server.queue.push("https://youtu.be/vPoFvYrM53w");
+        }
+        else if(mode == 5)
+        {
+          server.queue.push("https://www.youtube.com/watch?v=AxVsh4eN8hE");
+        }
+        else if(mode ==6)
+        {
+          server.queue.push("https://www.youtube.com/watch?v=l3CBfmPzimY");
+        }
+
+
         if(!message.member.voice.connection) message.member.voice.channel.join().then(function(connection){
             play(connection, message);
         })

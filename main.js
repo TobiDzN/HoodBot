@@ -8,11 +8,12 @@ const ytdl = require("ytdl-core");
 
 const idk = require ("ffmpeg-static");
 
+
 const prefix ='!';
 
 const fs = require('fs');
 const flawlessvictory = require('./commands/flawlessvictory');
-const ping = require('./commands/ping');
+const ping = require('./commands/clear');
 const timer = require('./commands/timer');
 
 const welcome = require("./welcome");
@@ -28,6 +29,9 @@ client.commands.set(command.name, command);
 }
 
 var servers = [];
+
+
+const keepAlive = require('./server.js');
 
 client.once('ready',()=>{
     console.log('Hood is online!');
@@ -52,7 +56,7 @@ client.on('message',message=>{
     const command = args.shift().toLowerCase();
 
     var d = new Date();
-    var hours = (d.getHours()+3);
+    var hours = (d.getHours()+2);
     var minuets = (d.getMinutes());
     var seconds = (d.getSeconds());
     var locald = ""+(hours+":"+minuets+":"+seconds);
@@ -69,8 +73,8 @@ client.on('message',message=>{
         locald = ""+(hours)+":"+(minuets)+":0"+(seconds);
     }
     
-    if(command === 'ping'){
-    client.commands.get('ping').execute(message,args);
+    if(command === 'clear'){
+    client.commands.get('clear').execute(message,args);
     }
     else if(command==='timer'){
       client.commands.get('timer').execute(message,args);
@@ -81,7 +85,7 @@ client.on('message',message=>{
     }
     else if(command === 'help')
     {
-        const cmds = [client.commands.get('ping'), client.commands.get('timer'), client.commands.get('flawlessvictory'), client.commands.get('play')];
+        const cmds = [client.commands.get('play'), client.commands.get('flawlessvictory'),client.commands.get('timer'),client.commands.get('clear')];
 
         var helps=" ";
 
@@ -121,7 +125,7 @@ client.on('message',message=>{
         message.member.voice.channel.leave();
         message.channel.send("Cya dog!");
         message.react('👋');
-        }, 2000);
+        }, 3000);
         
        
     }
@@ -129,7 +133,31 @@ client.on('message',message=>{
     {
         message.channel.send(locald);
     }
-    
+    else if(command === "roast")
+    {
+      client.commands.get('play').execute(message,args,3);
+      console.log("bot played:"+args[0]+" @"+locald);
+      message.react('🔥');
+    }
+    else if(command === "fiddleimpression")
+    {
+      client.commands.get('play').execute(message,args,4);
+      console.log("bot played:"+args[0]+" @"+locald);
+    }
+    else if(command === "ohhh")
+    {
+      client.commands.get('play').execute(message,args,5);
+      console.log("bot played:"+args[0]+" @"+locald);
+    }
+    else if(command === "sexybanana")
+    {
+      client.commands.get('play').execute(message,args,6);
+      console.log("bot played:"+args[0]+" @"+locald);
+    }
+    else if(command === "boots")
+    {
+      message.channel.send("https://cdn.discordapp.com/attachments/488293697935376406/930526115116744784/edge-of-night-46x.webp");
+    }
 
 
 
@@ -137,5 +165,5 @@ client.on('message',message=>{
 
 
 
-
-client.login(process.env.token);
+keepAlive();
+client.login("ODU0NzY3MjQ1ODYyMjQwMjU2.YMouCA.8Rt4PFoFQr9zU73yvXcDqcqcevg");

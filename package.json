@@ -4,14 +4,19 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
   },
   "author": "Tobi",
   "license": "ISC",
   "dependencies": {
+    "discord-reply": "^0.1.2",
     "discord.js": "^12.5.3",
-    "ffmpeg-static": "^4.4.0",
+    "express": "^4.17.2",
+    "ffmpeg-static": "^4.4.1",
     "opusscript": "0.0.8",
-    "ytdl-core": "^4.8.3"
+    "server": "^1.0.37",
+    "yt-search": "^2.10.3",
+    "ytdl-core": "^4.10.0"
   }
 }
