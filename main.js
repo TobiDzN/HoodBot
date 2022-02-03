@@ -9,7 +9,6 @@ const ytdl = require("ytdl-core");
 
 const idk = require ("ffmpeg-static");
 
-
 const prefix ='!';
 
 const fs = require('fs');
@@ -167,4 +166,4 @@ client.on('message',message=>{
 
 
 keepAlive();
-client.login(mySecret);
+client.login('ODU0NzY3MjQ1ODYyMjQwMjU2.YMouCA.-x_BTkgmSxXkINVgDj-3PJwtDx0');
