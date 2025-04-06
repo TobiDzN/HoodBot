@@ -13,8 +13,8 @@ function keepAlive() {
 
   today = dd + "/" + mm + "/" + yyyy;
 
-  server.listen(process.env.PORT, "0.0.0.0", () => {
-    console.log(`Server is Ready @ ${today}!`);
+  server.listen(3000, "0.0.0.0", () => {
+    console.log(`Server is Ready @ ${today}! Available at https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`);
   });
 }
 
