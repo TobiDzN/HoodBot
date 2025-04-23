@@ -27,7 +27,13 @@ async function play(connection, message) {
   const url = server.queue[0];
 
   // If the URL is valid YouTube, continue playing, no need to validate again
-  const stream = ytdl(url, { filter: "audioonly" });
+  const stream = ytdl(url, {
+    filter: "audioonly",
+    quality: "highestaudio",
+    opusEncoded: false, // Avoid Opus encoding if you suspect issues
+    highWaterMark: 1 << 25,
+  });
+
   const resource = createAudioResource(stream);
 
   const player = createAudioPlayer();
